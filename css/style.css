@@ -1,0 +1,153 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,*::before, *::after{
+    box-sizing: inherit;
+} 
+
+body{
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+
+#unico{
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.0;
+    font-family: sans-serif;
+    background: url("../img/bienvenidos.jpg") no-repeat center center fixed;
+    background-size:contain; 
+}
+
+.logo{
+    width: 120px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+    background-color: rgb(10,71,132);
+}
+.ham{
+    display: none;
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+.ham span{
+    display: block;
+    background-color: #f3f3f3;
+    height: 3px;
+    width: 28px;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+.enlaces-menu{
+    display: flex;
+    padding: 0px;
+}
+.enlaces-menu li{
+    padding: 0px 40px;
+    list-style-type: none;
+    /* agregar transicion */
+    transition: 0.7s;
+}
+.enlaces-menu li a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #f3f3f3;
+    font-weight: 600;
+}
+.enlaces-menu li:hover{
+    background-color: rgb(92, 192, 199); 
+}
+
+/* dispositivos moviles */
+@media(max-width:768px){
+    body {
+        overflow: hidden;
+    }
+    .logo{
+        padding-left: 25px;
+    }
+    .ham{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+    }
+
+.ham{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+nav{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 0;
+}
+.enlaces-menu{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 92vh;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: none; 
+}
+.enlaces-menu li{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+}
+/* agregar animacion utilizando keyframe */
+@keyframes muestramenu{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.enlaces-menu.activado{
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;
+}
+.br-1.activado{
+    transform: rotate(-45deg); translate: (-10px, 8px);
+}
+.br-2.activado{
+    opacity: 0;
+}
+
+.br-3.activado{
+    transform: rotate(45deg); translate: (-10px, -8px);
+}    
+.gallery{
+    display:grid;
+    gap:1rem;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-flow: dense;
+}
+.important{
+    grid-column:span 2;
+}
+#unico{
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.0;
+    font-family: sans-serif;
+    background: url("../img/bienvenidos.jpg") no-repeat center center fixed;
+    background-size:contain; 
+}
